@@ -1,5 +1,5 @@
 {
-  "name": "webcam-snapshot-view",
+  "name": "ampersand-webcam-snapshot-view",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,11 @@
     "ampersand-view": "^4.2.3",
     "attachmediastream": "^1.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "beefy": "^1.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "beefy demo.js --cwd ./demo --open"
   },
   "author": "",
   "license": "ISC"
