@@ -10,4 +10,4 @@ npm install ampersnand-webcam-snapshot-view --save
 
 ## Usage
 
-Check the demo for now.
+Check the [demo](http://ampersandjs.github.io/ampersand-webcam-snapshot-view/demo/) for now and look at [the code](./demo).
