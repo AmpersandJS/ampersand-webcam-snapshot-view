@@ -1,3 +1,5 @@
+.PHONY: gh-pages
+
 gh-pages:
 	git checkout gh-pages
 	git rebase master
