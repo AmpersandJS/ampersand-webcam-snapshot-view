@@ -27,10 +27,12 @@ module.exports = AmpersandView.extend({
         getUserMedia({video: true, audio: false }, function (err, video) {
             if (err) return this.trigger('error', err);
 
+            this.videoStream = video;
+
             attachMediaStream(video, videoEl, {
                 mirror: true,
             });
-        });
+        }.bind(this));
 
         return this;
     },
@@ -85,5 +87,9 @@ module.exports = AmpersandView.extend({
             0, 0, w, h
         );
         return this.canvasEl.toDataURL('image/jpg');
+    },
+    remove: function () {
+        AmpersandView.prototype.remove.apply(this);
+        this.videoStream.stop();
     }
 });
