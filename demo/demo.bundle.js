@@ -100,6 +100,9 @@ module.exports = AmpersandView.extend({
         var h = this.canvasEl.getAttribute('height');
 
         context.fillRect(0, 0, w, h);
+        context.translate(w/2, h/2);
+        context.scale(-1, 1);
+        context.translate(w/-2, h/-2);
         context.drawImage(
             this.videoEl,
             this.videoCrop.left, this.videoCrop.top, this.videoCrop.width, this.videoCrop.height,
