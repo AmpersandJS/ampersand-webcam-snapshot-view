@@ -1,6 +1,6 @@
 var AmpersandView = require('ampersand-view');
 var getUserMedia = require('getusermedia');
-var attachMediaStream = require('attachMediaStream');
+var attachMediaStream = require('attachmediastream');
 
 var template = [
     '<div>',
