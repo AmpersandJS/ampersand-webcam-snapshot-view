@@ -16,5 +16,5 @@
     "start": "beefy demo.js:demo.bundle.js --cwd ./demo --open"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
