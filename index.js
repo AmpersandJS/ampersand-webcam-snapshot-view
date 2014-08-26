@@ -4,10 +4,10 @@ var attachMediaStream = require('attachmediastream');
 
 var template = [
     '<div>',
-    '    <div role="video-wrap">',
-    '        <video role="video"></video>',
-    '        <div role="video-overlay" class="video-overlay">',
-    '            <div role="video-overlay-inner" class="video-overlay-inner"></div>',
+    '    <div data-hook="video-wrap">',
+    '        <video data-hook="video"></video>',
+    '        <div data-hook="video-overlay" class="video-overlay">',
+    '            <div data-hook="video-overlay-inner" class="video-overlay-inner"></div>',
     '        </div>',
     '    </div>',
     '</div>'
@@ -16,11 +16,11 @@ var template = [
 module.exports = AmpersandView.extend({
     template: template,
     events: {
-        'click [role=snap]': 'takeSnapshot'
+        'click [data-hook=snap]': 'takeSnapshot'
     },
     render: function () {
         this.renderWithTemplate({});
-        var videoEl = this.videoEl = this.getByRole('video');
+        var videoEl = this.videoEl = this.queryByHook('video');
         this.canvasEl = document.createElement('canvas');
         videoEl.addEventListener('canplay', this.videoReady.bind(this));
 
@@ -37,8 +37,8 @@ module.exports = AmpersandView.extend({
         return this;
     },
     styleVideo: function () {
-        var wrap = this.getByRole('video-wrap');
-        var overlay = this.getByRole('video-overlay');
+        var wrap = this.queryByHook('video-wrap');
+        var overlay = this.queryByHook('video-overlay');
 
         wrap.style.position = 'relative';
         wrap.style.display = 'inline-block';

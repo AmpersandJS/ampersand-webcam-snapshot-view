@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "ampersand-view": "^4.2.3",
+    "ampersand-view": "^7.0.0",
     "getusermedia": "^0.2.2",
     "attachmediastream": "^1.0.1"
   },
